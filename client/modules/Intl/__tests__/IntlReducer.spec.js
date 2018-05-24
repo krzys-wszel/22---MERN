@@ -9,4 +9,6 @@ test('action for SWITCH_LANGUAGE is working', reducerTest(
   { locale: 'en', enabledLanguages, ...localizationData.en },
   switchLanguage('fr'),
   { locale: 'fr', enabledLanguages, ...localizationData.fr },
+    switchLanguage('de'),
+  { locale: 'de', enabledLanguages, ...localizationData.de },
 ));
