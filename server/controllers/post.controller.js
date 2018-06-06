@@ -79,6 +79,7 @@ export function deletePost(req, res) {
   });
 }
 
+
 export function editPost(req, res) {
   Post.update({ cuid: req.params.cuid }, req.body.post).exec((err, post) => {
     if (err) {

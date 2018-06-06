@@ -1,7 +1,17 @@
 .container {
   max-width: 980px;
   width: 100%;
-  min-height: 60vh;
   padding: 15px;
   margin: 0 auto;
+}
+
+h2, h3 {
+  color: #2A2F3A;
+}
+h3 {
+  margin-bottom: 10px;
+}
+a {
+  text-decoration: none;
+  color: #ccc;
 }

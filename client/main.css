@@ -1,13 +1,12 @@
-/*
-  Global CSS file
-*/
-*{
+/* Global CSS file */
+
+* {
 	margin: 0;
 	padding: 0;
 	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	line-height: normal;
-    color: black;
 }
 
 ::-webkit-input-placeholder {
@@ -29,8 +28,6 @@ input:-moz-placeholder {
 
 body {
 	background: #FFF;
-	
-   /* background-image: url(modules/App/header-bk.png) font-family: 'Lato', sans-serif;*/
-	font-size: 24px;
-    color: black;
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
 }

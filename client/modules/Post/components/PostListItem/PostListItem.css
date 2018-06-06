@@ -118,3 +118,19 @@ textarea {
     font-size: 16px;
     color: #555;
 }
+
+.post-votes {
+    color: #616161;
+}
+
+.btn-up,
+.btn-down {
+    width: 30px;
+    height: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btn-down {
+    margin-left: 5px;
+}

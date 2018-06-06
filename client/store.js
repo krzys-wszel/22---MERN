@@ -1,6 +1,5 @@
-/**
- * Main store function
- */
+//Main store function
+
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import DevTools from './modules/App/components/DevTools';

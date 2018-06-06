@@ -5,10 +5,10 @@ import {  } from './AboutActions';
 const initialState = {};
 
 const AboutReducer = (state = initialState, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
+	switch (action.type) {
+		default:
+		return state;
+	}
 };
 
 export default AboutReducer;

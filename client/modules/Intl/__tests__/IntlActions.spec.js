@@ -7,7 +7,7 @@ import {
 } from '../IntlActions';
 import { localizationData } from '../../../../Intl/setup';
 
-const lang = 'en';
+const lang = 'pl';
 
 test('should return the correct type for switchLanguage', actionTest(
   switchLanguage,

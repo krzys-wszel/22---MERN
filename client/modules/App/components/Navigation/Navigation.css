@@ -1,0 +1,15 @@
+.menu {
+  background: teal;
+  width: 200px;
+}
+.menu ul {
+  padding-left: 80px;
+}
+.menu ul li {
+  float: left;
+}
+
+.menu ul li a {
+  color: #eede;
+  letter-spacing: 1px;
+}

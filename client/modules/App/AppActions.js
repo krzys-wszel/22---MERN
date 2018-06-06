@@ -4,13 +4,13 @@ export const TOGGLE_EDIT_POST = 'TOGGLE_EDIT_POST';
 
 // Export Actions
 export function toggleAddPost() {
-  return {
-    type: TOGGLE_ADD_POST,
-  };
+	return {
+		type: TOGGLE_ADD_POST,
+	};
 }
 
 export function toggleEditPost() {
-  return {
-    type: TOGGLE_EDIT_POST,
-  };
+	return {
+		type: TOGGLE_EDIT_POST,
+	};
 }

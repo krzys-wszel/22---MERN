@@ -6,7 +6,8 @@ import PostList from '../../components/PostList';
 import PostCreateWidget from '../../components/PostCreateWidget/PostCreateWidget';
 
 // Import Actions
-import { addPostRequest, fetchPosts, deletePostRequest } from '../../PostActions';
+import { addPostRequest, fetchPosts, deletePostRequest,
+          thumbUpPostRequest, thumbDownPostRequest } from '../../PostActions';
 import { toggleAddPost } from '../../../App/AppActions';
 
 // Import Selectors
@@ -29,11 +30,23 @@ class PostListPage extends Component {
     this.props.dispatch(addPostRequest({ name, title, content }));
   };
 
+  // INSERT +/- FUNCTIONS HERE
+  handleThumbUpPost = post => {
+    console.log('handleThumbUpPost: ' + post.name + ' cuid: ' + post.cuid);
+    this.props.dispatch(thumbUpPostRequest(post.cuid, post));
+  };
+
+  handleThumbDownPost = post => {
+    console.log('You reached handleThumbDownPost: ' + post.name);
+    this.props.dispatch(thumbDownPostRequest(post.cuid, post));
+  };
+
   render() {
     return (
       <div>
         <PostCreateWidget addPost={this.handleAddPost} showAddPost={this.props.showAddPost} />
-        <PostList handleDeletePost={this.handleDeletePost} posts={this.props.posts} />
+        <PostList handleDeletePost={this.handleDeletePost} posts={this.props.posts}
+          handleThumbUpPost={this.handleThumbUpPost} handleThumbDownPost={this.handleThumbDownPost} />
       </div>
     );
   }

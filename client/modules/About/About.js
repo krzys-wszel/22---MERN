@@ -1,29 +1,12 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React, { PropTypes } from 'react';
 
-class About extends Component {
-  render() {
-    return (
-      <div>
-       <h2>About blog!</h2>
-     </div>
-    );
-  }
+const About = () => {
+	return (
+		<div>
+			<h2>About Blog</h2>
+			<a href="/">Back to main page</a>
+		</div>
+	)
 }
 
-const mapStateToProps = (state) => {
-  return {};
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
-
-About.propTypes = {
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(About);
+export default About;

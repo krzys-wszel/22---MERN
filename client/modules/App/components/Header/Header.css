@@ -20,13 +20,13 @@
 
 .site-title a {
   text-decoration: none;
-  color: #FFF;
+  color: black;
 }
 
 .add-post-button {
   display: inline-block;
   color: #FFF;
-  background: #03A9F4;
+  background: skyblue;
   padding: 8px 16px;
   text-decoration: none;
   border-radius: 1000px;
@@ -35,6 +35,12 @@
 
 .language-switcher {
   background: rgba(0, 0, 0, 0.1);
+  background: skyblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  .flex-direction: row;
+  .justify-content: space-around;
 }
 
 .language-switcher ul {

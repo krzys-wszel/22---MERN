@@ -14,12 +14,8 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 // Initialize the Express App
 const app = new Express();
 
-// Set Development modes checks
-const isDevMode = process.env.NODE_ENV === 'development' || false;
-const isProdMode = process.env.NODE_ENV === 'production' || false;
-
 // Run Webpack dev server in development mode
-if (isDevMode) {
+if (process.env.NODE_ENV === 'development') {
   const compiler = webpack(config);
   app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
   app.use(webpackHotMiddleware(compiler));
@@ -79,7 +75,7 @@ const renderFullPage = (html, initialState) => {
         ${head.link.toString()}
         ${head.script.toString()}
 
-        ${isProdMode ? `<link rel='stylesheet' href='${assetsManifest['/app.css']}' />` : ''}
+        ${process.env.NODE_ENV === 'production' ? `<link rel='stylesheet' href='${assetsManifest['/app.css']}' />` : ''}
         <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'/>
         <link rel="shortcut icon" href="http://res.cloudinary.com/hashnode/image/upload/v1455629445/static_imgs/mern/mern-favicon-circle-fill.png" type="image/png" />
       </head>
@@ -87,13 +83,13 @@ const renderFullPage = (html, initialState) => {
         <div id="root">${html}</div>
         <script>
           window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
-          ${isProdMode ?
+          ${process.env.NODE_ENV === 'production' ?
           `//<![CDATA[
           window.webpackManifest = ${JSON.stringify(chunkManifest)};
           //]]>` : ''}
         </script>
-        <script src='${isProdMode ? assetsManifest['/vendor.js'] : '/vendor.js'}'></script>
-        <script src='${isProdMode ? assetsManifest['/app.js'] : '/app.js'}'></script>
+        <script src='${process.env.NODE_ENV === 'production' ? assetsManifest['/vendor.js'] : '/vendor.js'}'></script>
+        <script src='${process.env.NODE_ENV === 'production' ? assetsManifest['/app.js'] : '/app.js'}'></script>
       </body>
     </html>
   `;
@@ -101,7 +97,7 @@ const renderFullPage = (html, initialState) => {
 
 const renderError = err => {
   const softTab = '&#32;&#32;&#32;&#32;';
-  const errTrace = isProdMode ?
+  const errTrace = process.env.NODE_ENV !== 'production' ?
     `:<br><br><pre style="color:red">${softTab}${err.stack.replace(/\n/g, `<br>${softTab}`)}</pre>` : '';
   return renderFullPage(`Server Error${errTrace}`, {});
 };
